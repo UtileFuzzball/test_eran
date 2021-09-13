@@ -76,7 +76,9 @@ def isnetworkfile(fname):
     return fname
 
 
-
+"""
+TODO
+"""
 def parse_input_box(text):
     intervals_list = []
     for line in text.split('\n'):
@@ -107,7 +109,9 @@ def show_ascii_spec(lb, ub, n_rows, n_cols, n_channels):
         print('  |  ')
     print('==================================================================')
 
-
+"""
+TODO
+"""
 def normalize(image, means, stds, dataset):
     # normalization taken out of the network
     if len(means) == len(image):
@@ -147,7 +151,34 @@ def normalize(image, means, stds, dataset):
                 count = count+1
                 image[i+2048] = tmp[count]
                 count = count+1
+    elif (dataset == 'driving-dataset'):
+        count = 0
+        tmp = np.zeros(39600)
+        for i in range(13200):
+            tmp[count] = (image[count] - means[0]) / stds[0]
+            count = count + 1
+            tmp[count] = (image[count] - means[1]) / stds[1]
+            count = count + 1
+            tmp[count] = (image[count] - means[2]) / stds[2]
+            count = count + 1
 
+        is_gpupoly = (domain == 'gpupoly' or domain == 'refinegpupoly')
+        if is_conv and not is_gpupoly:
+            for i in range(39600):
+                image[i] = tmp[i]
+            # for i in range(1024):
+            #    image[i*3] = tmp[i]
+            #    image[i*3+1] = tmp[i+1024]
+            #    image[i*3+2] = tmp[i+2048]
+        else:
+            count = 0
+            for i in range(13200):
+                image[i] = tmp[count]
+                count = count + 1
+                image[i + 13200] = tmp[count]
+                count = count + 1
+                image[i + 26400] = tmp[count]
+                count = count + 1
 
 def normalize_plane(plane, mean, std, channel, is_constant):
     plane_ = plane.clone()
@@ -159,7 +190,9 @@ def normalize_plane(plane, mean, std, channel, is_constant):
 
     return plane_
 
-
+"""
+TODO
+"""
 def normalize_poly(num_params, lexpr_cst, lexpr_weights, lexpr_dim, uexpr_cst, uexpr_weights, uexpr_dim, means, stds, dataset):
     # normalization taken out of the network
     if dataset == 'mnist' or dataset == 'fashion':
@@ -177,7 +210,9 @@ def normalize_poly(num_params, lexpr_cst, lexpr_weights, lexpr_dim, uexpr_cst, u
             lexpr_weights[i] /= stds[(i // num_params) % 3]
             uexpr_weights[i] /= stds[(i // num_params) % 3]
 
-
+"""
+TODO
+"""
 def denormalize(image, means, stds, dataset):
     if dataset == 'mnist'  or dataset == 'fashion':
         for i in range(len(image)):
@@ -196,7 +231,9 @@ def denormalize(image, means, stds, dataset):
         for i in range(3072):
             image[i] = tmp[i]
 
-
+"""
+TODO
+"""
 def model_predict(base, input):
     if is_onnx:
         pred = base.run(input)
@@ -441,7 +478,7 @@ dataset = config.dataset
 
 # if zonotope is false
 if zonotope_bool==False:
-   assert dataset in ['mnist', 'cifar10', 'acasxu', 'fashion'], "only mnist, cifar10, acasxu, and fashion datasets are supported"
+   assert dataset in ['mnist', 'cifar10', 'acasxu', 'fashion','driving_dataset'], "only mnist, cifar10, acasxu, and fashion datasets are supported"
 
 mean = 0
 std = 0
@@ -488,13 +525,15 @@ else:
         num_pixels = 3072
     elif(dataset=='acasxu'):
         num_pixels = 5
+    elif(dataset=='driving_dataset'):
+        num_pixels=13200
     if is_onnx:
         model, is_conv = read_onnx_net(netname)
     else:
         model, is_conv, means, stds = read_tensorflow_net(netname, num_pixels, is_trained_with_pytorch, (domain == 'gpupoly' or domain == 'refinegpupoly'))
     if domain == 'gpupoly' or domain == 'refinegpupoly':
         if is_onnx:
-            translator = ONNXTranslator(model, True)
+            translator = ONNXTranslator(model, True) #no edit now
         else:
             translator = TFTranslator(model)
         operations, resources = translator.translate()
@@ -514,6 +553,12 @@ if not is_trained_with_pytorch:
     elif dataset == "cifar10":
         means = [0.4914, 0.4822, 0.4465]
         stds = [0.2023, 0.1994, 0.2010]
+    elif dataset == 'driving_dataset':
+        means = [0.27241945, 0.29117319, 0.34793583]
+        stds = [0.23264934, 0.23466264, 0.26194483]
+        # means = [0.4914, 0.4822, 0.4465]
+        # stds = [0.2023, 0.1994, 0.2010]
+
     else:
         means = [0.5, 0.5, 0.5]
         stds = [1, 1, 1]
@@ -1155,7 +1200,9 @@ elif config.input_box is not None:
     print('constraints hold for ' + str(correct) + ' out of ' + str(sum([1 for b in boxes])) + ' boxes')
 
 elif config.spatial:
-
+    """
+    TODO
+    """
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     if config.dataset in ['mnist', 'fashion']:
@@ -1365,6 +1412,8 @@ else:
             eps_array = val  
             
     for i, test in enumerate(tests):
+        print(i)
+        print(test)
         if config.from_test and i < config.from_test:
             continue
 
@@ -1382,6 +1431,9 @@ else:
         #for _, image in enumerate(cifarimages):
         #    specLB = np.float64(image)
         #specUB = np.copy(specLB)
+        # print(specLB)
+        # means=
+
         normalize(specLB, means, stds, dataset)
         normalize(specUB, means, stds, dataset)
 

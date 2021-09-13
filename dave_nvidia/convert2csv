@@ -1,0 +1,19 @@
+# import onnx
+# import onnxruntime
+import cv2
+import numpy as np
+import os
+
+# load onnx model
+# onnx_model = onnx.load("DAVE_NVIDIA_1_PGD_v2.onnx")
+
+def dir_path(dirname):
+	for maindir,subdir,file_name_list in os.walk(dirname):
+		print(maindir)
+		print(subdir)
+		print(file_name_list)
+
+		for filename in file_name_list:
+			print(filename)
+	return maindir,file_name_list
+# dir_path("/home/wangsiqi/w77/sundries/dx/ERAN/dave_nvidia/driving_dataset")
