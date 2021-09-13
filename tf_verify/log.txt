@@ -1,0 +1,360 @@
+GPUPoly 0.13.0S Debug (built Sep  8 2021 20:56:44) - Copyright (C) 2020 Department of Computer Science, ETH Zurich.
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it and to modify it under the terms of the GNU LGPLv3.
+
+{'approx_k': True,
+ 'attack': False,
+ 'complete': False,
+ 'data_dir': None,
+ 'dataset': 'cifar10',
+ 'debug': False,
+ 'delta': 0.3,
+ 'domain': 'deepzono',
+ 'epsfile': None,
+ 'epsilon': 0.1,
+ 'from_test': 0,
+ 'gamma': inf,
+ 'geometric': False,
+ 'geometric_config': None,
+ 'input_box': None,
+ 'k': 3,
+ 'logdir': None,
+ 'logname': None,
+ 'max_milp_neurons': 30,
+ 'mean': None,
+ 'n_milp_refine': 1,
+ 'netname': '../data/acasxu/nets/ACASXU_run2a_5_9_batch_2000.onnx',
+ 'normalized_region': True,
+ 'num_params': 0,
+ 'num_tests': None,
+ 'numproc': 8,
+ 'output_constraints': None,
+ 'partial_milp': 0,
+ 'quant_step': None,
+ 'refine_neurons': False,
+ 's': -2,
+ 'sparse_n': 70,
+ 'spatial': False,
+ 'specnumber': None,
+ 'std': None,
+ 'subset': None,
+ 't_norm': 'inf',
+ 'target': None,
+ 'timeout_complete': None,
+ 'timeout_final_lp': 100,
+ 'timeout_final_milp': 100,
+ 'timeout_lp': 1,
+ 'timeout_milp': 1,
+ 'use_default_heuristic': True,
+ 'use_milp': True,
+ 'vnn_lib_spec': None,
+ 'zonotope': None}
+netname  ../data/acasxu/nets/ACASXU_run2a_5_9_batch_2000.onnx  epsilon  0.1  domain  deepzono  dataset  cifar10 args complete  False  complete  False  timeout_lp  1
+This network has 300 neurons.
+Only the first 100 samples are available.
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+nlb  [-34759.67062567659, -2218.778422672292, -3489.9014070125004, -3356.4282544425278, -4007.7163401624953]  nub  [33095.66982492808, 3618.4113770028116, 4139.66043193315, 5492.812116471542, 5489.458673931709] adv labels  None
+img 0 Failed
+progress: 1/None, correct:  1/1, verified: 0/1, unsafe: 0/1,  time: 0.060; 0.060; 0.060
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 1 not considered, incorrectly classified
+progress: 2/None, correct:  1/2, verified: 0/1, unsafe: 0/1,  time: 0.015; 0.060; 0.060
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 2 not considered, incorrectly classified
+progress: 3/None, correct:  1/3, verified: 0/1, unsafe: 0/1,  time: 0.014; 0.060; 0.060
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 3 not considered, incorrectly classified
+progress: 4/None, correct:  1/4, verified: 0/1, unsafe: 0/1,  time: 0.015; 0.060; 0.060
+concrete  [0.28926291788854713, 0.1909967680470646, -0.011572449337763028, 0.17480235606597735, 0.09955435575901463]
+img 4 not considered, incorrectly classified
+progress: 5/None, correct:  1/5, verified: 0/1, unsafe: 0/1,  time: 0.014; 0.060; 0.060
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 5 not considered, incorrectly classified
+progress: 6/None, correct:  1/6, verified: 0/1, unsafe: 0/1,  time: 0.015; 0.060; 0.060
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 6 not considered, incorrectly classified
+progress: 7/None, correct:  1/7, verified: 0/1, unsafe: 0/1,  time: 0.021; 0.060; 0.060
+concrete  [0.491446015309278, 0.11924390510353444, -0.010366324403783992, 0.11159278686333632, -0.05789038255412444]
+img 7 not considered, incorrectly classified
+progress: 8/None, correct:  1/8, verified: 0/1, unsafe: 0/1,  time: 0.027; 0.060; 0.060
+concrete  [0.02816290128168683, 0.016174720395344715, -0.023973857654742862, 0.013528464146519387, -0.015312741562106059]
+img 8 not considered, incorrectly classified
+progress: 9/None, correct:  1/9, verified: 0/1, unsafe: 0/1,  time: 0.028; 0.060; 0.060
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 9 not considered, incorrectly classified
+progress: 10/None, correct:  1/10, verified: 0/1, unsafe: 0/1,  time: 0.041; 0.060; 0.060
+concrete  [0.37401143514477225, 0.08650319700664791, -0.01757479071187003, 0.07591057200315947, -0.052119201249745416]
+nlb  [-40615.0110664389, -2567.1696624933884, -4015.4307931352955, -3899.9246672064883, -4636.85304343341]  nub  [38187.66396726344, 4190.036603443075, 4809.605028965174, 6397.702308160894, 6412.434675184014] adv labels  None
+img 10 Failed
+progress: 11/None, correct:  2/11, verified: 0/2, unsafe: 0/2,  time: 0.113; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 11 not considered, incorrectly classified
+progress: 12/None, correct:  2/12, verified: 0/2, unsafe: 0/2,  time: 0.025; 0.087; 0.173
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+img 12 not considered, incorrectly classified
+progress: 13/None, correct:  2/13, verified: 0/2, unsafe: 0/2,  time: 0.025; 0.087; 0.173
+concrete  [0.5252736518020247, 0.026345165630545116, -0.002678220689804986, 0.01636369626083026, -0.024457402757774506]
+img 13 not considered, incorrectly classified
+progress: 14/None, correct:  2/14, verified: 0/2, unsafe: 0/2,  time: 0.023; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 14 not considered, incorrectly classified
+progress: 15/None, correct:  2/15, verified: 0/2, unsafe: 0/2,  time: 0.025; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 15 not considered, incorrectly classified
+progress: 16/None, correct:  2/16, verified: 0/2, unsafe: 0/2,  time: 0.041; 0.087; 0.173
+concrete  [0.17653819229786077, 0.053651706558479055, -0.018486546162495978, 0.048354827953073096, -0.03670044147147739]
+img 16 not considered, incorrectly classified
+progress: 17/None, correct:  2/17, verified: 0/2, unsafe: 0/2,  time: 0.026; 0.087; 0.173
+concrete  [0.3948850842730945, 0.11151705808324143, -0.008818633398735589, 0.10712518248892917, -0.04936789370330724]
+img 17 not considered, incorrectly classified
+progress: 18/None, correct:  2/18, verified: 0/2, unsafe: 0/2,  time: 0.016; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 18 not considered, incorrectly classified
+progress: 19/None, correct:  2/19, verified: 0/2, unsafe: 0/2,  time: 0.015; 0.087; 0.173
+concrete  [0.10524007767300439, 0.016756932803876277, -0.023989549815583565, 0.011782939126772432, -0.007255022700448329]
+img 19 not considered, incorrectly classified
+progress: 20/None, correct:  2/20, verified: 0/2, unsafe: 0/2,  time: 0.013; 0.087; 0.173
+concrete  [0.56306163349931, 0.15262081538873534, -0.002304904115743106, 0.14710089828379724, -0.05698271680035148]
+img 20 not considered, incorrectly classified
+progress: 21/None, correct:  2/21, verified: 0/2, unsafe: 0/2,  time: 0.013; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 21 not considered, incorrectly classified
+progress: 22/None, correct:  2/22, verified: 0/2, unsafe: 0/2,  time: 0.014; 0.087; 0.173
+concrete  [0.4733611764799056, 0.06693028461884751, -0.022624316647175145, 0.054711764603178704, -0.0009615359212610496]
+img 22 not considered, incorrectly classified
+progress: 23/None, correct:  2/23, verified: 0/2, unsafe: 0/2,  time: 0.016; 0.087; 0.173
+concrete  [0.6780396847954062, 0.13675251005347905, -0.016475213754030802, 0.12000889448886472, -0.07621164863617026]
+img 23 not considered, incorrectly classified
+progress: 24/None, correct:  2/24, verified: 0/2, unsafe: 0/2,  time: 0.018; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 24 not considered, incorrectly classified
+progress: 25/None, correct:  2/25, verified: 0/2, unsafe: 0/2,  time: 0.021; 0.087; 0.173
+concrete  [-0.09244266109944319, 0.021265164052432475, -0.03538705502934668, 0.030081629224949, 0.004048122485703336]
+img 25 not considered, incorrectly classified
+progress: 26/None, correct:  2/26, verified: 0/2, unsafe: 0/2,  time: 0.022; 0.087; 0.173
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+img 26 not considered, incorrectly classified
+progress: 27/None, correct:  2/27, verified: 0/2, unsafe: 0/2,  time: 0.037; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 27 not considered, incorrectly classified
+progress: 28/None, correct:  2/28, verified: 0/2, unsafe: 0/2,  time: 0.034; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 28 not considered, incorrectly classified
+progress: 29/None, correct:  2/29, verified: 0/2, unsafe: 0/2,  time: 0.031; 0.087; 0.173
+concrete  [0.3920982739832831, 0.08951210902305962, -0.017491281808743153, 0.07843443951305086, -0.05353142611190158]
+img 29 not considered, incorrectly classified
+progress: 30/None, correct:  2/30, verified: 0/2, unsafe: 0/2,  time: 0.042; 0.087; 0.173
+concrete  [2.6482428825298863, 0.44616837109213875, -0.0010215417937201876, 0.41713710119422276, -0.22959527587311854]
+img 30 not considered, incorrectly classified
+progress: 31/None, correct:  2/31, verified: 0/2, unsafe: 0/2,  time: 0.036; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 31 not considered, incorrectly classified
+progress: 32/None, correct:  2/32, verified: 0/2, unsafe: 0/2,  time: 0.039; 0.087; 0.173
+concrete  [0.019080124216260638, 0.039167451809771624, -0.0003581591855583051, 0.0383112071350607, 0.0033132458251963065]
+img 32 not considered, incorrectly classified
+progress: 33/None, correct:  2/33, verified: 0/2, unsafe: 0/2,  time: 0.051; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 33 not considered, incorrectly classified
+progress: 34/None, correct:  2/34, verified: 0/2, unsafe: 0/2,  time: 0.025; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 34 not considered, incorrectly classified
+progress: 35/None, correct:  2/35, verified: 0/2, unsafe: 0/2,  time: 0.021; 0.087; 0.173
+concrete  [0.2275948133590702, 0.034503712362122956, -0.02204731997495442, 0.03053490836697571, -0.004500839462981873]
+img 35 not considered, incorrectly classified
+progress: 36/None, correct:  2/36, verified: 0/2, unsafe: 0/2,  time: 0.021; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 36 not considered, incorrectly classified
+progress: 37/None, correct:  2/37, verified: 0/2, unsafe: 0/2,  time: 0.020; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 37 not considered, incorrectly classified
+progress: 38/None, correct:  2/38, verified: 0/2, unsafe: 0/2,  time: 0.025; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 38 not considered, incorrectly classified
+progress: 39/None, correct:  2/39, verified: 0/2, unsafe: 0/2,  time: 0.024; 0.087; 0.173
+concrete  [0.022956620946897044, 0.016806982807915927, -0.022093484952662414, 0.01594224291854007, -0.016949122660621686]
+img 39 not considered, incorrectly classified
+progress: 40/None, correct:  2/40, verified: 0/2, unsafe: 0/2,  time: 0.027; 0.087; 0.173
+concrete  [0.38273921236573627, 0.05011801439727448, -0.02446879385284031, 0.04562797723215548, 0.00044839187169024367]
+img 40 not considered, incorrectly classified
+progress: 41/None, correct:  2/41, verified: 0/2, unsafe: 0/2,  time: 0.035; 0.087; 0.173
+concrete  [0.3288197784290453, 0.11807763053127113, -0.016814228224793015, 0.11212686921124175, 0.0351000757108093]
+img 41 not considered, incorrectly classified
+progress: 42/None, correct:  2/42, verified: 0/2, unsafe: 0/2,  time: 0.042; 0.087; 0.173
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 42 not considered, incorrectly classified
+progress: 43/None, correct:  2/43, verified: 0/2, unsafe: 0/2,  time: 0.026; 0.087; 0.173
+concrete  [0.1202731227784116, 0.12698108647789608, 0.07989629015292078, 0.11754177649466512, 0.09720273585241863]
+img 43 not considered, incorrectly classified
+progress: 44/None, correct:  2/44, verified: 0/2, unsafe: 0/2,  time: 0.030; 0.087; 0.173
+concrete  [0.35546278496124717, 0.02299452012580859, -0.0299353511712682, 0.017679113030095776, 0.009659615075519847]
+nlb  [-19604.315251679942, -1198.1322938904445, -1861.358289765012, -1830.7393976038688, -2167.6912354201113]  nub  [17691.307586616567, 1982.7403953783978, 2301.5083875176147, 3062.9419364983114, 3097.632182673034] adv labels  None
+img 44 Failed
+progress: 45/None, correct:  3/45, verified: 0/3, unsafe: 0/3,  time: 0.104; 0.092; 0.277
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 45 not considered, incorrectly classified
+progress: 46/None, correct:  3/46, verified: 0/3, unsafe: 0/3,  time: 0.024; 0.092; 0.277
+concrete  [0.871153834990327, 0.062341961976215776, -0.025143242355252546, 0.05164757654027306, 0.03839824255315455]
+img 46 not considered, incorrectly classified
+progress: 47/None, correct:  3/47, verified: 0/3, unsafe: 0/3,  time: 0.023; 0.092; 0.277
+concrete  [0.5049823355002281, 0.12500977767675867, -0.008529785926306373, 0.11861654975292414, -0.05804298106140705]
+img 47 not considered, incorrectly classified
+progress: 48/None, correct:  3/48, verified: 0/3, unsafe: 0/3,  time: 0.024; 0.092; 0.277
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+img 48 not considered, incorrectly classified
+progress: 49/None, correct:  3/49, verified: 0/3, unsafe: 0/3,  time: 0.028; 0.092; 0.277
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 49 not considered, incorrectly classified
+progress: 50/None, correct:  3/50, verified: 0/3, unsafe: 0/3,  time: 0.030; 0.092; 0.277
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 50 not considered, incorrectly classified
+progress: 51/None, correct:  3/51, verified: 0/3, unsafe: 0/3,  time: 0.056; 0.092; 0.277
+concrete  [0.023870345063257963, 0.02382959476145632, -0.018676735382829036, 0.022992851446000294, -0.020053344409226476]
+img 51 not considered, incorrectly classified
+progress: 52/None, correct:  3/52, verified: 0/3, unsafe: 0/3,  time: 0.031; 0.092; 0.277
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+img 52 not considered, incorrectly classified
+progress: 53/None, correct:  3/53, verified: 0/3, unsafe: 0/3,  time: 0.029; 0.092; 0.277
+concrete  [-0.01848945780692855, 0.02257789103918059, -0.014965006072653546, 0.023797504265355998, -0.012304770911768865]
+nlb  [-12801.699651114752, -788.3270090836302, -1271.385752882242, -1206.272026000188, -1461.7032451239231]  nub  [11983.953525254, 1299.669004871513, 1528.729051139697, 1990.998550740106, 2030.1302982899374] adv labels  None
+img 53 Failed
+progress: 54/None, correct:  4/54, verified: 0/4, unsafe: 0/4,  time: 0.116; 0.098; 0.393
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 54 not considered, incorrectly classified
+progress: 55/None, correct:  4/55, verified: 0/4, unsafe: 0/4,  time: 0.026; 0.098; 0.393
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 55 not considered, incorrectly classified
+progress: 56/None, correct:  4/56, verified: 0/4, unsafe: 0/4,  time: 0.031; 0.098; 0.393
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+img 56 not considered, incorrectly classified
+progress: 57/None, correct:  4/57, verified: 0/4, unsafe: 0/4,  time: 0.025; 0.098; 0.393
+concrete  [1.4411417061718808, 0.05414197798514673, -0.042050566399388936, 0.04929981801005467, 0.059906698880979645]
+img 57 not considered, incorrectly classified
+progress: 58/None, correct:  4/58, verified: 0/4, unsafe: 0/4,  time: 0.031; 0.098; 0.393
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 58 not considered, incorrectly classified
+progress: 59/None, correct:  4/59, verified: 0/4, unsafe: 0/4,  time: 0.029; 0.098; 0.393
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 59 not considered, incorrectly classified
+progress: 60/None, correct:  4/60, verified: 0/4, unsafe: 0/4,  time: 0.032; 0.098; 0.393
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 60 not considered, incorrectly classified
+progress: 61/None, correct:  4/61, verified: 0/4, unsafe: 0/4,  time: 0.041; 0.098; 0.393
+concrete  [1.1060451963671234, 0.04452828237514094, -0.03817383042558327, 0.03865493314513257, 0.043596959677086725]
+img 61 not considered, incorrectly classified
+progress: 62/None, correct:  4/62, verified: 0/4, unsafe: 0/4,  time: 0.025; 0.098; 0.393
+concrete  [0.5622222196939014, 0.010372552786521166, -0.03923890727043299, -0.01232415981780578, 0.03922325001624197]
+img 62 not considered, incorrectly classified
+progress: 63/None, correct:  4/63, verified: 0/4, unsafe: 0/4,  time: 0.023; 0.098; 0.393
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+nlb  [-21504.780126225796, -1379.9164555612153, -2203.4377355747615, -2082.2682325219535, -2509.7935021470894]  nub  [20777.571377696077, 2253.024372706815, 2585.4248062016986, 3401.920341383355, 3403.033623267864] adv labels  None
+img 63 Failed
+progress: 64/None, correct:  5/64, verified: 0/5, unsafe: 0/5,  time: 0.106; 0.100; 0.499
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 64 not considered, incorrectly classified
+progress: 65/None, correct:  5/65, verified: 0/5, unsafe: 0/5,  time: 0.019; 0.100; 0.499
+concrete  [0.0449896622812556, 0.027925752355329993, -0.024990244215514823, 0.018186147493516394, -0.028640297487548014]
+img 65 not considered, incorrectly classified
+progress: 66/None, correct:  5/66, verified: 0/5, unsafe: 0/5,  time: 0.013; 0.100; 0.499
+concrete  [0.019042806538273907, 0.018616504134160012, -0.01936400754799431, 0.01960622840192552, -0.017226884745236242]
+img 66 not considered, incorrectly classified
+progress: 67/None, correct:  5/67, verified: 0/5, unsafe: 0/5,  time: 0.014; 0.100; 0.499
+concrete  [0.6120188331581022, 0.14367396423770926, -0.00765475134452601, 0.13561851674968756, -0.06628129011310548]
+img 67 not considered, incorrectly classified
+progress: 68/None, correct:  5/68, verified: 0/5, unsafe: 0/5,  time: 0.014; 0.100; 0.499
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+nlb  [-29639.52063964357, -1864.6914517806722, -2908.1482301985557, -2832.011117787841, -3363.220349488473]  nub  [27644.408913765517, 3053.1763601234566, 3503.6688112000165, 4666.102063154458, 4681.09604465971] adv labels  None
+img 68 Failed
+progress: 69/None, correct:  6/69, verified: 0/6, unsafe: 0/6,  time: 0.069; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 69 not considered, incorrectly classified
+progress: 70/None, correct:  6/70, verified: 0/6, unsafe: 0/6,  time: 0.019; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 70 not considered, incorrectly classified
+progress: 71/None, correct:  6/71, verified: 0/6, unsafe: 0/6,  time: 0.022; 0.095; 0.568
+concrete  [1.000103787729449, 0.039398809748035855, -0.035874075657618444, 0.03318388592575821, 0.03925381086288239]
+img 71 not considered, incorrectly classified
+progress: 72/None, correct:  6/72, verified: 0/6, unsafe: 0/6,  time: 0.018; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 72 not considered, incorrectly classified
+progress: 73/None, correct:  6/73, verified: 0/6, unsafe: 0/6,  time: 0.019; 0.095; 0.568
+concrete  [0.7839238509086403, 0.1624164387665912, -0.012029245018960463, 0.14820548123792293, -0.0826151363368277]
+img 73 not considered, incorrectly classified
+progress: 74/None, correct:  6/74, verified: 0/6, unsafe: 0/6,  time: 0.020; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 74 not considered, incorrectly classified
+progress: 75/None, correct:  6/75, verified: 0/6, unsafe: 0/6,  time: 0.021; 0.095; 0.568
+concrete  [0.3301735936516985, 0.09815012553550602, -0.007396310882214836, 0.0957673975225014, -0.03794799100745469]
+img 75 not considered, incorrectly classified
+progress: 76/None, correct:  6/76, verified: 0/6, unsafe: 0/6,  time: 0.021; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 76 not considered, incorrectly classified
+progress: 77/None, correct:  6/77, verified: 0/6, unsafe: 0/6,  time: 0.036; 0.095; 0.568
+concrete  [0.5380918730288712, 0.14325674841872324, 0.0018650126550847287, 0.14145546362625855, -0.04037443746115483]
+img 77 not considered, incorrectly classified
+progress: 78/None, correct:  6/78, verified: 0/6, unsafe: 0/6,  time: 0.030; 0.095; 0.568
+concrete  [0.495293583047419, 0.024355769837224765, -0.035880072159228164, 0.005851506908719231, 0.016490823599879446]
+img 78 not considered, incorrectly classified
+progress: 79/None, correct:  6/79, verified: 0/6, unsafe: 0/6,  time: 0.029; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 79 not considered, incorrectly classified
+progress: 80/None, correct:  6/80, verified: 0/6, unsafe: 0/6,  time: 0.036; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 80 not considered, incorrectly classified
+progress: 81/None, correct:  6/81, verified: 0/6, unsafe: 0/6,  time: 0.035; 0.095; 0.568
+concrete  [0.9298195212257018, 0.038243175890748084, -0.03726265697577037, 0.028055634045529545, 0.035488138419451525]
+img 81 not considered, incorrectly classified
+progress: 82/None, correct:  6/82, verified: 0/6, unsafe: 0/6,  time: 0.040; 0.095; 0.568
+concrete  [2.1778136438988795, 0.40380081266297524, -0.002283576505473714, 0.379725004203275, -0.19189849715357699]
+img 82 not considered, incorrectly classified
+progress: 83/None, correct:  6/83, verified: 0/6, unsafe: 0/6,  time: 0.036; 0.095; 0.568
+concrete  [-0.893340390012705, 0.0414069700693366, -0.19050006889554763, 0.12730824761990348, 0.14354813707139868]
+img 83 not considered, incorrectly classified
+progress: 84/None, correct:  6/84, verified: 0/6, unsafe: 0/6,  time: 0.036; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 84 not considered, incorrectly classified
+progress: 85/None, correct:  6/85, verified: 0/6, unsafe: 0/6,  time: 0.030; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 85 not considered, incorrectly classified
+progress: 86/None, correct:  6/86, verified: 0/6, unsafe: 0/6,  time: 0.025; 0.095; 0.568
+concrete  [0.532761905898624, 0.0572735709276391, -0.00983848281439455, 0.07453730015205082, -0.03814676684201968]
+img 86 not considered, incorrectly classified
+progress: 87/None, correct:  6/87, verified: 0/6, unsafe: 0/6,  time: 0.023; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 87 not considered, incorrectly classified
+progress: 88/None, correct:  6/88, verified: 0/6, unsafe: 0/6,  time: 0.026; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 88 not considered, incorrectly classified
+progress: 89/None, correct:  6/89, verified: 0/6, unsafe: 0/6,  time: 0.033; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 89 not considered, incorrectly classified
+progress: 90/None, correct:  6/90, verified: 0/6, unsafe: 0/6,  time: 0.039; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 90 not considered, incorrectly classified
+progress: 91/None, correct:  6/91, verified: 0/6, unsafe: 0/6,  time: 0.037; 0.095; 0.568
+concrete  [0.06990863929820339, 0.01785699840195645, -0.021062653529549547, 0.015597774854974853, -0.013109531992646759]
+img 91 not considered, incorrectly classified
+progress: 92/None, correct:  6/92, verified: 0/6, unsafe: 0/6,  time: 0.022; 0.095; 0.568
+concrete  [-0.020840585707452564, 0.017850629979207066, -0.01942926593536654, 0.01785600673583728, -0.011698408964204885]
+img 92 not considered, incorrectly classified
+progress: 93/None, correct:  6/93, verified: 0/6, unsafe: 0/6,  time: 0.013; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 93 not considered, incorrectly classified
+progress: 94/None, correct:  6/94, verified: 0/6, unsafe: 0/6,  time: 0.014; 0.095; 0.568
+concrete  [0.018877927966630396, 0.018625390996164948, -0.019362394717422685, 0.01957831857471835, -0.0172339294535602]
+img 94 not considered, incorrectly classified
+progress: 95/None, correct:  6/95, verified: 0/6, unsafe: 0/6,  time: 0.014; 0.095; 0.568
+concrete  [0.7469603894968392, 0.19317326889808836, 0.0021199237120288275, 0.18588572687833463, -0.07075592479965338]
+img 95 not considered, incorrectly classified
+progress: 96/None, correct:  6/96, verified: 0/6, unsafe: 0/6,  time: 0.014; 0.095; 0.568
+concrete  [2.9864131707774457, 0.5148827877303616, -0.011268280562401117, 0.4721196115659484, -0.26279167921848295]
+img 96 not considered, incorrectly classified
+progress: 97/None, correct:  6/97, verified: 0/6, unsafe: 0/6,  time: 0.013; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 97 not considered, incorrectly classified
+progress: 98/None, correct:  6/98, verified: 0/6, unsafe: 0/6,  time: 0.014; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 98 not considered, incorrectly classified
+progress: 99/None, correct:  6/99, verified: 0/6, unsafe: 0/6,  time: 0.015; 0.095; 0.568
+concrete  [-0.020551299676299095, 0.01803160086274147, -0.018809199333190918, 0.01816380023956299, -0.01842140033841133]
+img 99 not considered, incorrectly classified
+progress: 100/None, correct:  6/100, verified: 0/6, unsafe: 0/6,  time: 0.015; 0.095; 0.568
+analysis precision  0 /  6

@@ -26,10 +26,10 @@ def get_tests(dataset):
         tests = csv.reader(csvfile, delimiter=',')
     return tests
 
-zonotope_file = open('./zonotope_file', 'w+')
+zonotope_file = open('./cifar10zt.zt', 'w+')
 
 epsilon = 0.026
-tests = get_tests('mnist')
+tests = get_tests('cifar10')
 image_number = 0
 
 for index, test in enumerate(tests):

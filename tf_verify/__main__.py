@@ -17,6 +17,8 @@
 
 import sys
 import os
+import sys
+sys.path.append("..")
 cpu_affinity = os.sched_getaffinity(0)
 sys.path.insert(0, '../ELINA/python_interface/')
 sys.path.insert(0, '../deepg/code/')
@@ -396,10 +398,12 @@ for k, v in vars(args).items():
 config.json = vars(args)
 pprint(config.json)
 
+# ignore
 if config.specnumber and not config.input_box and not config.output_constraints:
     config.input_box = '../data/acasxu/specs/acasxu_prop_' + str(config.specnumber) + '_input_prenormalized.txt'
     config.output_constraints = '../data/acasxu/specs/acasxu_prop_' + str(config.specnumber) + '_constraints.txt'
 
+# provide network:true
 assert config.netname, 'a network has to be provided for analysis.'
 
 #if len(sys.argv) < 4 or len(sys.argv) > 5:
@@ -435,6 +439,7 @@ elif not config.geometric:
 
 dataset = config.dataset
 
+# if zonotope is false
 if zonotope_bool==False:
    assert dataset in ['mnist', 'cifar10', 'acasxu', 'fashion'], "only mnist, cifar10, acasxu, and fashion datasets are supported"
 
