@@ -179,6 +179,34 @@ def normalize(image, means, stds, dataset):
                 count = count + 1
                 image[i + 26400] = tmp[count]
                 count = count + 1
+    elif (dataset == 'new'):
+        count = 0
+        tmp = np.zeros(12288)
+        for i in range(4096):
+            tmp[count] = (image[count] - means[0]) / stds[0]
+            count = count + 1
+            tmp[count] = (image[count] - means[1]) / stds[1]
+            count = count + 1
+            tmp[count] = (image[count] - means[2]) / stds[2]
+            count = count + 1
+
+        is_gpupoly = (domain == 'gpupoly' or domain == 'refinegpupoly')
+        if is_conv and not is_gpupoly:
+            for i in range(12288):
+                image[i] = tmp[i]
+            # for i in range(1024):
+            #    image[i*3] = tmp[i]
+            #    image[i*3+1] = tmp[i+1024]
+            #    image[i*3+2] = tmp[i+2048]
+        else:
+            count = 0
+            for i in range(4096):
+                image[i] = tmp[count]
+                count = count + 1
+                image[i + 4096] = tmp[count]
+                count = count + 1
+                image[i + 8192] = tmp[count]
+                count = count + 1
 
 def normalize_plane(plane, mean, std, channel, is_constant):
     plane_ = plane.clone()
@@ -478,7 +506,7 @@ dataset = config.dataset
 
 # if zonotope is false
 if zonotope_bool==False:
-   assert dataset in ['mnist', 'cifar10', 'acasxu', 'fashion','driving_dataset'], "only mnist, cifar10, acasxu, and fashion datasets are supported"
+   assert dataset in ['mnist', 'cifar10', 'acasxu', 'fashion','driving_dataset','new'], "only mnist, cifar10, acasxu, and fashion datasets are supported"
 
 mean = 0
 std = 0
@@ -527,6 +555,8 @@ else:
         num_pixels = 5
     elif(dataset=='driving_dataset'):
         num_pixels=13200
+    elif(dataset=='new'):
+        num_pixels=4096
     if is_onnx:
         model, is_conv = read_onnx_net(netname)
     else:
@@ -558,7 +588,9 @@ if not is_trained_with_pytorch:
         stds = [0.23264934, 0.23466264, 0.26194483]
         # means = [0.4914, 0.4822, 0.4465]
         # stds = [0.2023, 0.1994, 0.2010]
-
+    elif dataset == 'new':
+        means = [0.27241945, 0.29117319, 0.34793583]
+        stds = [0.23264934, 0.23466264, 0.26194483]
     else:
         means = [0.5, 0.5, 0.5]
         stds = [1, 1, 1]
@@ -1413,7 +1445,7 @@ else:
             
     for i, test in enumerate(tests):
         print(i)
-        print(test)
+        # print(test)
         if config.from_test and i < config.from_test:
             continue
 
@@ -1433,9 +1465,9 @@ else:
         #specUB = np.copy(specLB)
         # print(specLB)
         # means=
-
-        normalize(specLB, means, stds, dataset)
-        normalize(specUB, means, stds, dataset)
+        """delete normalize"""
+        # normalize(specLB, means, stds, dataset)
+        # normalize(specUB, means, stds, dataset)
 
         #print("specLB ", len(specLB), "specUB ", specUB)
         is_correctly_classified = False
@@ -1467,8 +1499,9 @@ else:
             if config.normalized_region==True:
                 specLB = np.clip(image - epsilon,0,1)
                 specUB = np.clip(image + epsilon,0,1)
-                normalize(specLB, means, stds, dataset)
-                normalize(specUB, means, stds, dataset)
+                """del normalize"""
+                # normalize(specLB, means, stds, dataset)
+                # normalize(specUB, means, stds, dataset)
             else:
                 specLB = specLB - epsilon
                 specUB = specUB + epsilon
@@ -1538,7 +1571,8 @@ else:
                             adv_image = np.array(x)
                             res = np.argmax((network.eval(adv_image))[:,0])
                             if res!=int(test[0]):
-                                denormalize(x,means, stds, dataset)
+                                """del normalize"""
+                                # denormalize(x,means, stds, dataset)
                                 # print("img", i, "Verified unsafe with adversarial image ", adv_image, "cex label", cex_label, "correct label ", int(test[0]))
                                 print("img", i, "Verified unsafe against label ", res, "correct label ", int(test[0]))
                                 unsafe_images += 1
@@ -1596,7 +1630,8 @@ else:
                             if adv_image != None:
                                 cex_label,_,_,_,_,_ = eran.analyze_box(adv_image[0], adv_image[0], 'deepzono', config.timeout_lp, config.timeout_milp, config.use_default_heuristic, approx_k=config.approx_k)
                                 if(cex_label!=label):
-                                    denormalize(adv_image[0], means, stds, dataset)
+                                    """del normalize"""
+                                    # denormalize(adv_image[0], means, stds, dataset)
                                     # print("img", i, "Verified unsafe with adversarial image ", adv_image, "cex label", cex_label, "correct label ", label)
                                     print("img", i, "Verified unsafe against label ", cex_label, "correct label ", label)
                                     unsafe_images+=1
@@ -1610,6 +1645,7 @@ else:
                             cex_label,_,_,_,_,_ = eran.analyze_box(x,x,'deepzono',config.timeout_lp, config.timeout_milp, config.use_default_heuristic, approx_k=config.approx_k)
                             print("cex label ", cex_label, "label ", label)
                             if(cex_label!=label):
+                                """del normalize"""
                                 denormalize(x,means, stds, dataset)
                                 # print("img", i, "Verified unsafe with adversarial image ", x, "cex label ", cex_label, "correct label ", label)
                                 print("img", i, "Verified unsafe against label ", cex_label, "correct label ", label)

@@ -24,11 +24,11 @@ def convert(maindir,file_name_list):
 		print(maindir+filename)
 		full_image = cv2.imread(maindir+"/"+filename)
 		# x=np.reshape(full_image)
-		# print(full_image.shape)
-		full_image=cv2.resize(full_image,[66,200])
-		# print(full_image.shape)
+		print(full_image.shape)
+		full_image=cv2.resize(full_image,(128,32))
+		print(full_image.shape)
 		# print(full_image)
-		filename="driving_dataset_test_full.csv"
+		filename="new_test_full.csv"
 		writecsv(filename, full_image)
 
 
@@ -47,5 +47,5 @@ def writecsv(filename,image):
 						file.write(",")
 
 	pass
-maindir,file_name_list=dir_path("/home/wangsiqi/w77/sundries/dx/ERAN/dave_nvidia/driving_dataset")
+maindir,file_name_list=dir_path("/home/wangsiqi/w77/sundries/dx/ERAN/data/examples_to_run/IMG/")
 convert(maindir,file_name_list)
